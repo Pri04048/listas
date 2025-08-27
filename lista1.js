@@ -66,13 +66,7 @@ function boasVindas() {
       }
     }
 
-    function arredondarValores() {
-      let numero = Number(prompt("Digite um número decimal:"));
-      alert("Arredondado para cima: " + Math.ceil(numero));
-      alert("Arredondado para baixo: " + Math.floor(numero));
-      alert("Arredondado normalmente: " + Math.round(numero));
-    }
-
+  
     function manipularNumeros() {
       let numeros = [];
       for (let i = 0; i < 10; i++) {

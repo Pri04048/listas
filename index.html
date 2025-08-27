@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!-- < <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -24,7 +24,6 @@
 
   <h2>4 - Funções Matemáticas</h2>
   <button onclick="adivinharNumero()">Adivinhar Número</button>
-  <button onclick="arredondarValores()">Arredondar Valores</button>
   <button onclick="manipularNumeros()">Manipular Números</button>
   <button onclick="novosValores()">Novos Valores</button>
 
@@ -33,52 +32,50 @@
   <button onclick="diasAniversario()">Dias até o Aniversário</button>
   <script src="lista1.js"></script>
   </body>
-  </html> -->
+  </html>  -->
 
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Exercícios de Funções e DOM</title>
+  <title>Revisão JS Completa</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    button { margin: 5px; padding: 8px; cursor: pointer; }
+    input { margin: 5px; padding: 5px; }
+  </style>
 </head>
 <body>
+  <h1 id="tituloPrincipal">Título da Página</h1>
+  <p id="paragrafoPrincipal">Este é um parágrafo inicial.</p>
 
-  <h1 id="titulo">Exercícios JS</h1>
-
-  <h2>Funções</h2>
-  <p>Abra o console para ver os resultados das funções.</p>
-
-  <h2>DOM – Manipulação</h2>
-  <p id="paragrafo">Texto original</p>
-  <button id="btnTrocarTexto">Trocar Texto</button>
-
-  <br>
-  <button id="btnFundo">Mudar fundo para azul</button>
-
-  <ul id="lista">
+  <ul id="listaItens">
     <li>Item 1</li>
-    <li>Item 2</li>
   </ul>
-  <button id="btnAdicionar">Adicionar item</button>
 
-  <p id="paraRemover">Este parágrafo será removido</p>
-  <button id="btnRemover">Remover Parágrafo</button>
+  <h2>Manipulação do DOM</h2>
+  <button onclick="alterarTexto()">Trocar Texto</button>
+  <button onclick="alterarFundo()">Mudar Fundo</button>
+  <button onclick="adicionarLista()">Adicionar Item</button>
+  <button onclick="removerParagrafoPrincipal()">Remover Parágrafo</button>
+  <button onclick="customizarPagina()">Personalizar Página</button>
 
-  <br>
-  <button id="btnPersonalizar">Personalizar Texto/Título</button>
+  <h2>Eventos DOM</h2>
+  <!-- 1 - Digitação -->
+  <input type="text" id="inputTexto" placeholder="Digite algo...">
+  <p id="saidaTexto"></p>
 
-  <h2>DOM – Eventos</h2>
-  <input type="text" id="campoTexto" placeholder="Digite algo...">
-  <p id="saida"></p>
+  <!-- 2 - Mouseover -->
+  <button id="btnMouseOver">Passe o mouse aqui</button>
 
-  <button id="btnMouse">Passe o mouse aqui</button>
-  <p id="textoEsconder">Este texto pode sumir</p>
-  <button id="btnEsconder">Duplo clique para esconder texto acima</button>
+  <!-- 3 - Dblclick -->
+  <p id="paragrafoEscondido">Esse texto vai sumir ao dar duplo clique no botão.</p>
+  <button id="btnDblClick">Clique duas vezes para esconder</button>
 
-  <p id="textoFonte">Este texto terá fonte aleatória</p>
-  <button id="btnFonte">Alterar Fonte</button>
+  <!-- 4 - Fonte aleatória -->
+  <p id="paragrafoFonte">Texto com fonte que muda de tamanho!</p>
+  <button id="btnMudarFonte">Alterar fonte</button>
 
-  <script src="script.js"></script>
+  <script src="lista2.js"></script>
 </body>
 </html>
-
