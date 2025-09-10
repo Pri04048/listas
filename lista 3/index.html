@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lista 3 </title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        canvas {
+            border: 2px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="meuCanvas" width="600" height="400"></canvas>
+
+    <script>
+        const canvas = document.getElementById("meuCanvas");
+        const ctx = canvas.getContext("2d");
+
+        // 1 - 
+        ctx.fillStyle = "green";
+        ctx.fillRect(50, 50, 100, 100);
+
+        // 2 
+        ctx.beginPath();
+        ctx.arc(250, 100, 50, 0, Math.PI * 2);
+        ctx.fillStyle = "red";
+        ctx.fill();
+
+        // 3 
+        ctx.clearRect(80, 80, 40, 40);
+
+        // 4 
+
+        ctx.beginPath();
+        ctx.arc(450, 100, 60, 0, Math.PI * 2);
+        ctx.fillStyle = "yellow";
+        ctx.fill();
+        ctx.stroke();
+
+
+        ctx.beginPath();
+        ctx.arc(430, 90, 8, 0, Math.PI * 2);
+        ctx.arc(470, 90, 8, 0, Math.PI * 2);
+        ctx.fillStyle = "black";
+        ctx.fill();
+
+
+        ctx.beginPath();
+        ctx.arc(450, 110, 30, 0, Math.PI);
+        ctx.stroke();
+
+        // 5 
+        ctx.fillStyle = "pink";
+        ctx.fillRect(80, 200, 150, 120);
+
+        ctx.beginPath();
+        ctx.moveTo(80, 200);
+        ctx.lineTo(155, 130);
+        ctx.lineTo(230, 200);
+        ctx.closePath();
+        ctx.fillStyle = "purple";
+        ctx.fill();
+
+
+        ctx.fillStyle = "purple";
+        ctx.fillRect(130, 260, 40, 60);
+
+
+        // 6 
+        ctx.fillStyle = "black";
+        ctx.fillRect(300, 200, 80, 120);
+
+        ctx.fillStyle = "yellow";
+        ctx.fillRect(380, 200, 80, 120);
+
+        ctx.fillStyle = "red";
+        ctx.fillRect(460, 200, 80, 120);
+
+    </script>
