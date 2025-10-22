@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Banner Automático</title>
+    <style>
+        #banner {
+            width: 100%;
+            max-width: 800px;
+            display: block;
+            margin: 40px auto;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px #0002;
+        }
+
+        #lampada {
+            display: block;
+            margin: 40px auto;
+            width: 120px;
+            cursor: pointer;
+            transition: filter 0.2s;
+        }
+
+        #imagemExtra {
+            display: block;
+            margin: 40px auto;
+            width: 200px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px #0001;
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: pink;
+            border-radius: 20px;
+        }
+
+        #fotoPerfil {
+            display: block;
+            margin: 40px auto;
+            width: 150px;
+            border-radius: 50%;
+            box-shadow: 0 2px 8px #0002;
+        }
+    </style>
+</head>
+
+<body>
+    <img id="banner" src="img/grey.jpg" alt="Banner">
+
+    <img id="lampada" src="img/lamapag.png" alt="Lâmpada">
+
+    <button id="mostrarEsconder">Mostrar/Esconder</button>
+    <img id="imagemExtra" src="img/love.jpg" alt="Nova Imagem">
+
+    <img id="fotoPerfil" src="img/lexie.jpg" alt="Foto de Perfil">
+
+    <button id="trocarFoto">Trocar Foto</button>
+
+
+
+    <div style="text-align:center; margin-top:40px;">
+        <img class="miniatura" src="img/img1.jpg" alt="Miniatura 1"
+            style="width:80px; margin:10px; cursor:pointer; border-radius:8px;">
+        <img class="miniatura" src="img/img2.jpg" alt="Miniatura 2"
+            style="width:80px; margin:10px; cursor:pointer; border-radius:8px;">
+        <img class="miniatura" src="img/img3.jpg" alt="Miniatura 3"
+            style="width:80px; margin:10px; cursor:pointer; border-radius:8px;">
+    </div>
+    <img id="imagemGrande" src="" alt="Imagem Grande"
+        style="display:none; margin:30px auto; max-width:400px; display:block; border-radius:12px; box-shadow:0 2px 8px #0002;">
+
+
+
+
+    <script>
+        function trocarBanner() {
+            const banner = document.getElementById('banner');
+            if (window.innerWidth <= 600) {
+                banner.src = 'img/grey.jpg';
+            } else {
+                banner.src = 'img/amelia.jpg';
+            }
+        }
+
+        window.addEventListener('resize', trocarBanner);
+        window.addEventListener('DOMContentLoaded', trocarBanner);
+
+        // Troca de lâmpada ao clicar
+        const lampada = document.getElementById('lampada');
+        let acesa = false;
+
+        lampada.addEventListener('click', function () {
+            acesa = !acesa;
+            lampada.src = acesa ? 'img/lamac.png' : 'img/lamapag.png';
+        });
+
+        // Mostrar/Esconder nova imagem
+        const botao = document.getElementById('mostrarEsconder');
+        const imagemExtra = document.getElementById('imagemExtra');
+        botao.addEventListener('click', function () {
+            if (imagemExtra.style.display === 'none') {
+                imagemExtra.style.display = 'block';
+            } else {
+                imagemExtra.style.display = 'none';
+            }
+        });
+        const fotoPerfil = document.getElementById('fotoPerfil');
+        const botaoTrocar = document.getElementById('trocarFoto');
+        let fotoAtual = true;
+
+        botaoTrocar.addEventListener('click', function () {
+            if (fotoAtual) {
+                fotoPerfil.src = 'img/lexie.jpg';
+            } else {
+                fotoPerfil.src = 'img/mark.jpg';
+            }
+            fotoAtual = !fotoAtual;
+        });
+        const miniaturas = document.querySelectorAll('.miniatura');
+        const imagemGrande = document.getElementById('imagemGrande');
+        const imagensGrandes = [
+            'img/img1.jpg',
+            'img/img2.jpg',
+            'img/img3.jpg'
+        ];
+
+        miniaturas.forEach((miniatura, i) => {
+            miniatura.addEventListener('click', function () {
+                imagemGrande.src = imagensGrandes[i];
+                imagemGrande.style.display = 'block';
+            });
+        });
+        // Opcional: esconder imagem grande ao clicar nela
+        imagemGrande.addEventListener('click', function () {
+            imagemGrande.style.display = 'none';
+        });
+
+       
+function trocarBanner() {
+    const banner = document.getElementById('banner');
+    if (window.innerWidth < 600) {
+        banner.src = 'img/marvel.jpg';    // Banner para celular
+    } else if (window.innerWidth <= 1024) {
+        banner.src = 'img/marvel2.jpg';    // Banner para tablet
+    } else {
+        banner.src = 'img/spider.jpg';   // Banner para desktop
+    }
+}
+
+window.addEventListener('resize', trocarBanner);
+window.addEventListener('DOMContentLoaded', trocarBanner);
+    </script>
+</body>
+
+</html>
