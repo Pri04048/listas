@@ -91,7 +91,7 @@
         window.addEventListener('resize', trocarBanner);
         window.addEventListener('DOMContentLoaded', trocarBanner);
 
-        // Troca de lâmpada ao clicar
+      
         const lampada = document.getElementById('lampada');
         let acesa = false;
 
@@ -100,7 +100,7 @@
             lampada.src = acesa ? 'img/lamac.png' : 'img/lamapag.png';
         });
 
-        // Mostrar/Esconder nova imagem
+     
         const botao = document.getElementById('mostrarEsconder');
         const imagemExtra = document.getElementById('imagemExtra');
         botao.addEventListener('click', function () {
@@ -136,7 +136,6 @@
                 imagemGrande.style.display = 'block';
             });
         });
-        // Opcional: esconder imagem grande ao clicar nela
         imagemGrande.addEventListener('click', function () {
             imagemGrande.style.display = 'none';
         });
@@ -145,14 +144,14 @@
 function trocarBanner() {
     const banner = document.getElementById('banner');
     if (window.innerWidth < 600) {
-        banner.src = 'img/marvel.jpg';    // Banner para celular
+        banner.src = 'img/marvel.jpg';    
     } else if (window.innerWidth <= 1024) {
-        banner.src = 'img/marvel2.jpg';    // Banner para tablet
+        banner.src = 'img/marvel2.jpg';    
     } else {
-        banner.src = 'img/spider.jpg';   // Banner para desktop
-    }
+        banner.src =
+      'img/spider.jpg';   
 }
-
+}
 window.addEventListener('resize', trocarBanner);
 window.addEventListener('DOMContentLoaded', trocarBanner);
     </script>
